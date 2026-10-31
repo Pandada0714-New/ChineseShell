@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chineseshell"
+version = "0.1.0"
+description = "用中文执行常用 shell 命令"
+requires-python = ">=3.10"
+authors = [{ name = "ChineseShell" }]
+keywords = ["shell", "chinese", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Natural Language :: Chinese (Simplified)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+chineseshell = "chineseshell.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["chineseshell*"]
